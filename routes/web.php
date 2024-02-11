@@ -100,6 +100,9 @@ Route::controller(PurchaseController::class)->group(function () {
     Route::get('/purchaseall', 'PurchaseAll')->name('purchase.all');
     Route::get('/purchaseadd', 'PurchaseAdd')->name('purchase.add');
     Route::post('/purchasestore', 'PurchaseStore')->name('purchase.store');
+    Route::get('/purchasedelete{id}', 'PurchaseDelete')->name('purchase.delete');
+    Route::get('/purchasepending', 'PurchasePending')->name('purchase.pending');
+    Route::get('/purchaseapprove{id}', 'PurchaseApprove')->name('purchase.approve');
 });
 
 // Default Route

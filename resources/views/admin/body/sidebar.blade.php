@@ -84,6 +84,11 @@
                                 >All Purchase</a
                             >
                         </li>
+                        <li>
+                            <a href="{{ route('purchase.pending') }}"
+                                >Approval Purchase</a
+                            >
+                        </li>
                     </ul>
                 </li>
 

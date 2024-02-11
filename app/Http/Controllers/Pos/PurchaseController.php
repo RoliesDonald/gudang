@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Pos;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Product;
 use App\Models\Purchase;
 use App\Models\supplier;
 use App\Models\Unit;
@@ -31,11 +32,11 @@ class PurchaseController extends Controller
 
         if ($request->category_id == null) {
 
-            $notification = array(
+            $toastrnotif = array(
                 'message' => 'Sorry you do not select any item',
                 'alert-type' => 'error'
             );
-            return redirect()->back()->with($notification);
+            return redirect()->back()->with($toastrnotif);
         } else {
             $count_category = count([$request->category_id]);
             for ($i = 0; $i < $count_category; $i++) {
@@ -63,4 +64,39 @@ class PurchaseController extends Controller
         );
         return redirect()->route('purchase.all')->with($toastrnotif);
     } //end PurchaseStore
+
+    public function PurchaseDelete($id)
+    {
+        Purchase::findOrFail($id)->delete();
+
+        $toastrnotif = array(
+            'message' => 'Purchase Successfully Deleted',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($toastrnotif);
+    } //end PurchaseDelete
+
+    public function PurchasePending()
+    {
+        $allData = Purchase::orderBy('date', 'desc')->orderBy('id', 'desc')->where('status', '0')->get();
+        return view('backend.purchase.purchase_pending', compact('allData'));
+    } // end PurchasePending
+
+    public function PurchaseApprove($id)
+    {
+        $approvepurchase = Purchase::findOrFail($id);
+        $product = Product::where('id', $approvepurchase->product_id)->first();
+        $purchase_qty = ((float)($approvepurchase->buying_qty)) + ((float)($product->quantity));
+        $product->quantity = $purchase_qty;
+        if ($product->save()) {
+            Purchase::findOrFail($id)->update([
+                'status' => '1',
+            ]);
+            $toastrnotif = array(
+                'message' => 'Status Approved Successfully',
+                'alert-type' => 'success'
+            );
+            return redirect()->route('purchase.all')->with($toastrnotif);
+        }
+    } // end PurchaseApprove
 }

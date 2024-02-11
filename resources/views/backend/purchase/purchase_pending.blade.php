@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">All Purchase Data</h4>
+                    <h4 class="mb-sm-0">Pending Purchase </h4>
 
                 </div>
             </div>
@@ -19,7 +19,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
-                            <h4 class="card-title">Purchase All Data </h4>
+                            <h4 class="card-title">All Pending Purchase </h4>
                             <a href="{{ route('purchase.add') }}"
                                 class="btn btn-dark btn-rounded waves-effect waves-light" ">Create New Purchase</a></div><br>
                                                 <table id=" datatable"
@@ -59,9 +59,9 @@
                                                 class="btn btn-info sm" title="Edit Data"> <i
                                                     class="fas fa-edit"></i></a> --}}
                                             @if($item->status == '0')
-                                            <a href="{{ route('purchase.delete', $item->id) }}"
-                                                class="btn btn-danger sm" title="Delete Data" id="delete">
-                                                <i class="fas fa-trash-alt"></i> </a>
+                                            <a href="{{ route('purchase.approve', $item->id) }}"
+                                                class="btn btn-success sm" title="Approve" id="approvebtn">
+                                                <i class="fas fa-check-circle"></i> </a>
                                             @endif
                                         </td>
                                     </tr>
