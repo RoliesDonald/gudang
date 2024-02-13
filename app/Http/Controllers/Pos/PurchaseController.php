@@ -38,7 +38,7 @@ class PurchaseController extends Controller
             );
             return redirect()->back()->with($toastrnotif);
         } else {
-            $count_category = count([$request->category_id]);
+            $count_category = count($request->category_id);
             for ($i = 0; $i < $count_category; $i++) {
                 $purchase = new Purchase();
                 $purchase->date = date('Y-m-d', strtotime($request->date[$i]));
@@ -64,6 +64,11 @@ class PurchaseController extends Controller
         );
         return redirect()->route('purchase.all')->with($toastrnotif);
     } //end PurchaseStore
+
+
+
+
+
 
     public function PurchaseDelete($id)
     {

@@ -10,6 +10,10 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}" />
 
+    <!-- Select2 css -->
+    <link href="{{
+                asset('backend/assets/libs/select2/css/select2.min.css')
+            }}" rel="stylesheet" type="text/css" />
     <!-- jquery.vectormap css -->
     <link href="{{
                 asset(
@@ -175,6 +179,8 @@
                 )
             }}"></script>
 
+
+
     <!-- Required datatable js -->
     <script src="{{
                 asset(
@@ -208,14 +214,7 @@
                 asset('backend/assets/js/pages/dashboard.init.js')
             }}"></script>
 
-    <!-- Table Editable plugin -->
-    <script src="{{
-                asset('assets/libs/table-edits/build/table-edits.min.js')
-            }}"></script>
 
-    <script src="{{
-                asset('assets/js/pages/table-editable.init.js')
-            }}"></script>
 
     <!-- App js -->
     <script src="{{ asset('backend/assets/js/app.js') }}"></script>
@@ -228,25 +227,25 @@
 
     <script>
         @if (Session::has('message'))
-                    var type = "{{ Session::get('alert-type', 'info') }}"
-                    switch (type) {
-                        case 'info':
-                            toastr.info(" {{ Session::get('message') }} ");
-                            break;
+                        var type = "{{ Session::get('alert-type', 'info') }}"
+                        switch (type) {
+                            case 'info':
+                                toastr.info(" {{ Session::get('message') }} ");
+                                break;
 
-                        case 'success':
-                            toastr.success(" {{ Session::get('message') }} ");
-                            break;
+                            case 'success':
+                                toastr.success(" {{ Session::get('message') }} ");
+                                break;
 
-                        case 'warning':
-                            toastr.warning(" {{ Session::get('message') }} ");
-                            break;
+                            case 'warning':
+                                toastr.warning(" {{ Session::get('message') }} ");
+                                break;
 
-                        case 'error':
-                            toastr.error(" {{ Session::get('message') }} ");
-                            break;
-                    }
-                @endif
+                            case 'error':
+                                toastr.error(" {{ Session::get('message') }} ");
+                                break;
+                        }
+                    @endif
     </script>
     <!-- sweetalert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -259,6 +258,20 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
 
+    <!-- Select2 js -->
+    <script src="{{
+        asset('backend/assets/libs/select2/js/select2.min.js')
+    }}"></script>
+
+    <script src="{{ asset('backend/assets/js/pages/form-advanced.init.js') }}"></script>
+    <!-- Table Editable plugin -->
+    <script src="{{
+        asset('backend/assets/libs/table-edits/build/table-edits.min.js')
+    }}"></script>
+
+    <script src="{{
+        asset('backend/assets/js/pages/table-editable.init.js')
+    }}"></script>
 </body>
 
 </html>

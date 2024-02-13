@@ -11,10 +11,7 @@
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li>
                     <a href="{{ route('dashboard') }}" class="waves-effect">
-                        <i class="ri-dashboard-line"></i
-                        ><span class="badge rounded-pill bg-success float-end"
-                            >3</span
-                        >
+                        <i class="ri-dashboard-line"></i><span class="badge rounded-pill bg-success float-end">3</span>
                         <span>Dashboard</span>
                     </a>
                 </li>
@@ -56,10 +53,7 @@
                 </li>
 
                 <li>
-                    <a
-                        href="javascript: void(0);"
-                        class="has-arrow waves-effect"
-                    >
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-box-3-line"></i>
                         <span>Product</span>
                     </a>
@@ -71,23 +65,28 @@
                 </li>
 
                 <li>
-                    <a
-                        href="javascript: void(0);"
-                        class="has-arrow waves-effect"
-                    >
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-exchange-2-line"></i>
                         <span>Manage Purchase</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li>
-                            <a href="{{ route('purchase.all') }}"
-                                >All Purchase</a
-                            >
+                            <a href="{{ route('purchase.all') }}">All Purchase</a>
                         </li>
                         <li>
-                            <a href="{{ route('purchase.pending') }}"
-                                >Approval Purchase</a
-                            >
+                            <a href="{{ route('purchase.pending') }}">Approval Purchase</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-draft-line"></i>
+                        <span>Manage Invoice</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li>
+                            <a href="{{ route('invoice.all') }}">All Invoice</a>
                         </li>
                     </ul>
                 </li>
@@ -95,9 +94,7 @@
                 <li>
                     <a href="javascript: void(0);" class="waves-effect">
                         <i class="ri-eraser-fill"></i>
-                        <span class="badge rounded-pill bg-danger float-end"
-                            >8</span
-                        >
+                        <span class="badge rounded-pill bg-danger float-end">8</span>
                         <span>Forms</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -108,9 +105,7 @@
                             <a href="form-validation.html">Form Validation</a>
                         </li>
                         <li>
-                            <a href="form-advanced.html"
-                                >Form Advanced Plugins</a
-                            >
+                            <a href="form-advanced.html">Form Advanced Plugins</a>
                         </li>
                         <li>
                             <a href="form-editors.html">Form Editors</a>
@@ -131,10 +126,7 @@
                 </li>
 
                 <li>
-                    <a
-                        href="javascript: void(0);"
-                        class="has-arrow waves-effect"
-                    >
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-share-line"></i>
                         <span>Multi Level</span>
                     </a>
@@ -143,9 +135,7 @@
                             <a href="javascript: void(0);">Level 1.1</a>
                         </li>
                         <li>
-                            <a href="javascript: void(0);" class="has-arrow"
-                                >Level 1.2</a
-                            >
+                            <a href="javascript: void(0);" class="has-arrow">Level 1.2</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
                                     <a href="javascript: void(0);">Level 2.1</a>

@@ -8,6 +8,7 @@ use App\Http\Controllers\Demo\DemoController;
 use App\Http\Controllers\Pos\CategoryController;
 use App\Http\Controllers\Pos\CustomerController;
 use App\Http\Controllers\Pos\DefaultController;
+use App\Http\Controllers\Pos\InvoiceController;
 use App\Http\Controllers\Pos\ProductController;
 use App\Http\Controllers\Pos\PurchaseController;
 use App\Http\Controllers\Pos\SupplierController;
@@ -103,6 +104,11 @@ Route::controller(PurchaseController::class)->group(function () {
     Route::get('/purchasedelete{id}', 'PurchaseDelete')->name('purchase.delete');
     Route::get('/purchasepending', 'PurchasePending')->name('purchase.pending');
     Route::get('/purchaseapprove{id}', 'PurchaseApprove')->name('purchase.approve');
+});
+
+// Route for Invoice
+Route::controller(InvoiceController::class)->group(function () {
+    Route::get('/invoiceeall', 'InvoiceAll')->name('invoice.all');
 });
 
 // Default Route
